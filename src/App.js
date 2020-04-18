@@ -25,13 +25,9 @@ export default function App() {
 
     const likedRepository = response.data;
 
-    const repoUpdated = repositories.map(repository => {
-      if(repository.id === id) {
-        return likedRepository;
-      } else {
-        return repository;
-      }
-   });
+    const repoUpdated = repositories.map(repository => 
+       repository.id === id ? likedRepository : repository
+   );
 
    setRepositories(repoUpdated);
   }
